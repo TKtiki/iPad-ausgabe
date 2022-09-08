@@ -3,27 +3,26 @@
     <button mat-icon-button>
       <mat-icon (click)="sidenav.toggle()">menu</mat-icon>
     </button>
-    <h1>Bk Witten</h1>
+    <h1>Digitale Geräte-Verwaltungssoftware</h1>
     <span class="menu-spacer"></span>
-    <div>
-      <a mat-button [routerLink]="'/Logout'"> Logout </a>
-    </div>
-  </mat-toolbar-row>
-
-  <mat-toolbar-row>
-    <span style="font-size: 12px">Digitalisierung BK-Witten</span>
   </mat-toolbar-row>
 </mat-toolbar>
 
 <mat-sidenav-container>
   <mat-sidenav #sidenav>
     <mat-nav-list>
-      <a mat-list-item [routerLink]="'/Home'"> Home </a>
-      <a mat-list-item [routerLink]="'/Admin'"> Admin</a>
-      <a mat-list-item [routerLink]="'/Lehrer'"> Lehrer </a>
-      <a mat-list-item (click)="sidenav.toggle()" href="" mat-list-item
-        >Schließen</a
+      <a (click)="sidenav.toggle()" mat-list-item [routerLink]="'/home'">
+        Home
+      </a>
+      <a (click)="sidenav.toggle()" mat-list-item [routerLink]="'/admin'">
+        Admin</a
       >
+      <a (click)="sidenav.toggle()" mat-list-item [routerLink]="'/dv'">
+        Datenverwaltung
+      </a>
+      <a (click)="sidenav.toggle()" mat-list-item [routerLink]="'/logout'">
+        Logout
+      </a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>

@@ -10,10 +10,23 @@ import {
   MatSidenavModule,
   MatListModule,
   MatButtonModule,
+  MatCardModule,
+  MatGridListModule,
+  MatFormFieldModule,
+  MatInputModule,
 } from "@angular/material";
+import { HomeComponent } from "./home/home.component";
+import { AdminComponent } from "./admin/admin.component";
+import { DatenverwaltungComponent } from "./datenverwaltung/datenverwaltung.component";
+import { FormsModule } from "@angular/forms";
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [
+    AppComponent,
+    HomeComponent,
+    AdminComponent,
+    DatenverwaltungComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -23,6 +36,11 @@ import {
     MatListModule,
     MatButtonModule,
     MatIconModule,
+    MatCardModule,
+    MatGridListModule,
+    MatFormFieldModule,
+    FormsModule,
+    MatInputModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

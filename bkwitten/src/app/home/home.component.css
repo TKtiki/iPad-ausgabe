@@ -1,0 +1,9 @@
+.mat-form-field {
+    display: block;
+    position: relative;
+    text-align: left;
+}
+.device-card{
+    height: 82%;
+    width: 95%;
+}

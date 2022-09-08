@@ -5,10 +5,7 @@
 <h3 align="center">Mayflower GmbH</h3>
 
   <p align="center">
-    BK-Witten Digitaliserungsprojek
-    <br />
-    <a href="https://github.com/github_username/repo_name"><strong>Explore the docs »</strong></a>
-    <br />
+    BK-Witten Digitaliserungsprojekt
     <br />
   </p>
 </div>

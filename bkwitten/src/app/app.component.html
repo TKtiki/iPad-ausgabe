@@ -6,9 +6,6 @@
     <h1>Bk Witten</h1>
     <span class="menu-spacer"></span>
     <div>
-      <a mat-button [routerLink]="'/Home'"> Home </a>
-      <a mat-button [routerLink]="'/Admin'"> Admin </a>
-      <a mat-button [routerLink]="'/Lehrer'"> Lehrer </a>
       <a mat-button [routerLink]="'/Logout'"> Logout </a>
     </div>
   </mat-toolbar-row>
@@ -24,7 +21,6 @@
       <a mat-list-item [routerLink]="'/Home'"> Home </a>
       <a mat-list-item [routerLink]="'/Admin'"> Admin</a>
       <a mat-list-item [routerLink]="'/Lehrer'"> Lehrer </a>
-      <a mat-list-item [routerLink]="'/Logout'"> Logout </a>
       <a mat-list-item (click)="sidenav.toggle()" href="" mat-list-item
         >Schließen</a
       >

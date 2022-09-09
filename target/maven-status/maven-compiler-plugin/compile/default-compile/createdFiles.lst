@@ -1,0 +1,12 @@
+com\bkwitten\Digitalisierung\Repository\HistorieRepository.class
+com\bkwitten\Digitalisierung\Repository\UserRepository.class
+com\bkwitten\Digitalisierung\model\Schueler.class
+com\bkwitten\Digitalisierung\Repository\KlasseRepository.class
+com\bkwitten\Digitalisierung\model\Geraet.class
+com\bkwitten\Digitalisierung\Repository\SchuelerRepository.class
+com\bkwitten\Digitalisierung\model\User.class
+com\bkwitten\Digitalisierung\DigitalisierungApplication.class
+com\bkwitten\Digitalisierung\model\Klasse.class
+com\bkwitten\Digitalisierung\model\Historie.class
+com\bkwitten\Digitalisierung\Repository\GeraetRepository.class
+.netbeans_automatic_build

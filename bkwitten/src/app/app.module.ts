@@ -14,6 +14,8 @@ import {
   MatGridListModule,
   MatFormFieldModule,
   MatInputModule,
+  MatTabsModule,
+  MatTableModule,
 } from "@angular/material";
 import { HomeComponent } from "./home/home.component";
 import { AdminComponent } from "./admin/admin.component";
@@ -41,6 +43,8 @@ import { FormsModule } from "@angular/forms";
     MatFormFieldModule,
     FormsModule,
     MatInputModule,
+    MatTabsModule,
+    MatTableModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

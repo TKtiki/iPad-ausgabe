@@ -38,6 +38,12 @@ public class Klasse {
        this.klassenlehrer = klassenlehrer;
        this.bezeichnug = bezeichnug;
     }
+
+    public int getId() {
+        return id;
+    }
+
+
     
 
     public User getKlassenlehrer() {

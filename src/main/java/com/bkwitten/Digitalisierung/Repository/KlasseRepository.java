@@ -7,6 +7,8 @@ package com.bkwitten.Digitalisierung.Repository;
 
  
 import com.bkwitten.Digitalisierung.model.Klasse;
+import com.bkwitten.Digitalisierung.model.Schueler;
+import com.bkwitten.Digitalisierung.model.User;
 import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -25,5 +27,9 @@ public interface KlasseRepository extends JpaRepository<Klasse, Integer>{
     @Query(nativeQuery = true, value = "SELECT datenbank.test(:value)")
     public int search(@Param("value") int value);
     
+    //SELECT * FROM `klasse` WHERE klassenlehrer_loginid = "lehrerID"; 
+    
+    @Query("SELECT k FROM Klasse k WHERE k.klassenlehrer = ?1")
+    public List<Klasse> findeAlleKlasseVonLehrer(User klassenlehrer_loginid);
     
 }

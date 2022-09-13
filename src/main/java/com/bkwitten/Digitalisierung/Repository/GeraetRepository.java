@@ -8,6 +8,7 @@ package com.bkwitten.Digitalisierung.Repository;
  
 
 import com.bkwitten.Digitalisierung.model.Geraet;
+import com.bkwitten.Digitalisierung.model.Historie;
 import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -26,5 +27,6 @@ public interface GeraetRepository extends JpaRepository<Geraet, String>{
     @Query(nativeQuery = true, value = "SELECT datenbank.test(:value)")
     public int search(@Param("value") int value);
     
-    
+    @Query("SELECT g FROM Geraet g WHERE g.status = ?1")
+    public List<Geraet> findeMitSeriennummerUndStatus(String status);
 }

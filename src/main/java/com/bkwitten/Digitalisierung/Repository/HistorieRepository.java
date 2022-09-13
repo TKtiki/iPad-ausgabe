@@ -6,7 +6,10 @@
 package com.bkwitten.Digitalisierung.Repository;
 
  
+import com.bkwitten.Digitalisierung.model.Geraet;
 import com.bkwitten.Digitalisierung.model.Historie;
+import com.bkwitten.Digitalisierung.model.Klasse;
+import com.bkwitten.Digitalisierung.model.User;
 import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -25,5 +28,6 @@ public interface HistorieRepository extends JpaRepository<Historie, Integer>{
     @Query(nativeQuery = true, value = "SELECT datenbank.test(:value)")
     public int search(@Param("value") int value);
     
-    
+    @Query("SELECT g FROM Historie g WHERE g.geraet = ?1")
+    public List<Historie> findeMitGeraet(Geraet geraet);
 }

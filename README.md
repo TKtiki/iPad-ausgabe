@@ -68,8 +68,8 @@ To get a local copy up and running follow these simple example steps.
   ```
 * Angular 
   ```sh
-  npm uninstall -g @angular/cli@^10
-  npm install -g @angular/cli@latest
+  npm uninstall -g @angular/cli
+  npm install -g @angular/cli@^10
   ```
 
 ### Installation

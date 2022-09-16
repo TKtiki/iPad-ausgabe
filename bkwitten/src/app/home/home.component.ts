@@ -1,18 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {MatTableDataSource} from '@angular/material/table';
-
-export interface Userdata {
-  id: number;
-  name: string;
-  vorname: string;
-  klasse: string;
-}
-
-const ELEMENT_DATA: Userdata[] = [
-  {id: 1, name: 'Hendrik', vorname: 'Reuss', klasse: 'ITO2022'},
-  {id: 2, name: 'Tarik', vorname: 'Karahan', klasse: 'ITO2022'},
-  {id: 3, name: 'Abdulwahab', vorname: 'Alhasan', klasse: 'ITO2022'},
-];
+import {NgForm} from '@angular/forms';
+import {DataServiceService} from '../services/data-service.service';
 
 @Component({
   selector: 'app-home',
@@ -20,15 +8,69 @@ const ELEMENT_DATA: Userdata[] = [
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
-  dataSource = new MatTableDataSource(ELEMENT_DATA);
+  studentDetails = null as any;
+  studentToUpdate = {
+    id: "",
+    vorname: "",
+    name: "",
+    klasse: "",
+  };
 
-  applyFilter(event: Event) {
-    const filterValue = (event.target as HTMLInputElement).value;
-    this.dataSource.filter = filterValue.trim().toLowerCase();
+  constructor(private schülerservice: DataServiceService) {
+    this.getStudentsDetails();
   }
-  constructor() {}
-  tiles: any;
+
+  register(registerForm: NgForm) {
+    this.schülerservice.registerStudent(registerForm.value).subscribe(
+      (resp) => {
+        console.log(resp);
+        registerForm.reset();
+        this.getStudentsDetails();
+      },
+      (err) => {
+        console.log(err);
+      }
+    );
+  }
+
+  getStudentsDetails() {
+    this.schülerservice.getStudents().subscribe(
+      (resp) => {
+        console.log(resp);
+        this.studentDetails = resp;
+      },
+      (err) => {
+        console.log(err);
+      }
+    );
+  }
+
+  deleteStudent(student: any) {
+    this.schülerservice.deleteStudent(student.rollNumber).subscribe(
+      (resp) => {
+        console.log(resp);
+        this.getStudentsDetails();
+      },
+      (err) => {
+        console.log(err);
+      }
+    );
+  }
+
+  edit(student: any) {
+    this.studentToUpdate = student;
+  }
+
+  updateStudent() {
+    this.schülerservice.updateStudents(this.studentToUpdate).subscribe(
+      (resp) => {
+        console.log(resp);
+      },
+      (err) => {
+        console.log(err);
+      }
+    );
+  }
 
   ngOnInit() {}
 }

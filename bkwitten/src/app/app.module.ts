@@ -1,5 +1,6 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
+import { HttpClientModule } from "@angular/common/http";
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
@@ -20,7 +21,7 @@ import {
 import { HomeComponent } from "./home/home.component";
 import { AdminComponent } from "./admin/admin.component";
 import { DatenverwaltungComponent } from "./datenverwaltung/datenverwaltung.component";
-import { FormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -45,6 +46,9 @@ import { FormsModule } from "@angular/forms";
     MatInputModule,
     MatTabsModule,
     MatTableModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

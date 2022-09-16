@@ -1,14 +1,17 @@
-
-
-
 @import 'https://fonts.googleapis.com/icon?family=Material+Icons';
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap");
+
+.device-card-user{
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
 .mat-badge-content {
   font-weight: 600;
   font-size: 12px; }
   html, body { height: 100%; }
   body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-  
+
 .mat-badge-small .mat-badge-content {
   font-size: 9px; }
 

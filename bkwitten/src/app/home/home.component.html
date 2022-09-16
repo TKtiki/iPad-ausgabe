@@ -1,20 +1,20 @@
 <mat-card class="device-card-user">
-    <mat-card-title>Aktueller Geräte Status</mat-card-title>
-    <mat-card-content>
-      <p>Die Anzahl der Verfügbaren Geräte beträgt: 533</p>
-      <p>Die Anzahl der Verliehenen Geräte beträgt: 241</p>
-    </mat-card-content>
-  </mat-card>
+  <mat-card-title>Aktueller Geräte Status</mat-card-title>
+  <mat-card-content>
+    <p>Die Anzahl der Verfügbaren Geräte beträgt: 533</p>
+    <p>Die Anzahl der Verliehenen Geräte beträgt: 241</p>
+  </mat-card-content>
+</mat-card>
 
-    <mat-card class="device-card-user">
-    <mat-card-title>Überfällige Geräte</mat-card-title>
-    <mat-card-content>
-      <p>Überzogene Geräte: 3</p>
-      <p>Geräte gekennzeichnet als Defekt: 1</p>
+<mat-card class="device-card-user">
+  <mat-card-title>Überfällige Geräte</mat-card-title>
+  <mat-card-content>
+    <p>Überzogene Geräte: 3</p>
+    <p>Geräte gekennzeichnet als Defekt: 1</p>
 
-      <div class="mt-5">
-        <table class="table table-bordered">
-          <thead>
+    <div class="mt-5">
+      <table class="table table-bordered">
+        <thead>
           <tr>
             <th>ID</th>
             <th>Vorname</th>
@@ -23,27 +23,39 @@
             <th>Edit</th>
             <th>Delete</th>
           </tr>
-          </thead>
-          <tbody class="tbody">
+        </thead>
+        <tbody class="tbody">
           <tr *ngFor="let student of studentDetails">
-            <td>{{student.id}}</td>
-            <td>{{student.vorname}}</td>
-            <td>{{student.nachname}}</td>
-            <td>{{student.klasse}}</td>
-            <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"
-                        (click)="edit(student)">Bearbeiten</button></td>
-            <td><button type="button" class="btn btn-danger" (click)="deleteStudent(student)">Löschen</button></td>
+            <td>{{ student.id }}</td>
+            <td>{{ student.vorname }}</td>
+            <td>{{ student.nachname }}</td>
+            <td>{{ student.klasse.bezeichnug}}</td>
+            <td>
+              <button
+                type="button"
+                class="btn btn-primary"
+                data-toggle="modal"
+                data-target="#exampleMosdal"
+                (click)="edit(student)"
+              >
+                Bearbeiten
+              </button>
+            </td>
+            <td>
+              <button
+                type="button"
+                class="btn btn-danger"
+                (click)="deleteStudent(student)"
+              >
+                Löschen
+              </button>
+            </td>
           </tr>
-          </tbody>
-        </table>
-      </div>
-
-
-    </mat-card-content>
-  </mat-card>
-
-
-
+        </tbody>
+      </table>
+    </div>
+  </mat-card-content>
+</mat-card>
 
 <mat-card>
   <mat-card-title>Geräte hinzufügen</mat-card-title>
@@ -95,7 +107,7 @@
               name="rollNumber"
               id="rollNumber"
               class="form-control"
-              placeholder="Student Roll number"
+              placeholder="Schüler ID"
             />
           </div>
           <div class="form-group">
@@ -142,4 +154,3 @@
     </div>
   </div>
 </div>
-

@@ -52,7 +52,7 @@ public class DigitalisierungApplication implements CommandLineRunner{
     @Override
     public void run(String... args) throws Exception {
         //create();
-         User lehrer = new User("lehrerID", "VornameLehrer", "NachnameLehrer", "lehrer");
+        User lehrer = new User("lehrerID", "VornameLehrer", "NachnameLehrer", "lehrer");
         
         
         List<Klasse> test = klasse_reposetory.findeAlleKlasseVonLehrer(lehrer);
@@ -66,6 +66,10 @@ public class DigitalisierungApplication implements CommandLineRunner{
         
         List<Schueler> test2 = schueler_reposetory.findeAlleSchuelerVonKlasse(klasse);
         System.out.println("test2: " + test2.get(0).getVorname());
+        test2.get(0).setVorname("lul");
+        schueler_reposetory.save(test2.get(0));
+        test2 = schueler_reposetory.findeAlleSchuelerVonKlasse(klasse);
+        System.out.println("test2.2: " + test2.get(0).getVorname());
         
         
         String seriennummer = "00100212";
@@ -79,6 +83,8 @@ public class DigitalisierungApplication implements CommandLineRunner{
         //Anzahl von geräte welche im lager sind
         List<Geraet> test5 = geraet_reposetory.findeMitSeriennummerUndStatus("lager");
         System.out.println(test5.size());
+        
+        
     }
 
     public void create(){
@@ -102,11 +108,13 @@ public class DigitalisierungApplication implements CommandLineRunner{
         
         
         String seriennummer = "00100212";
-        Geraet geraet = new Geraet(seriennummer, "01", "lager");
-        Geraet geraet2 = new Geraet(seriennummer+"2", "01", "lager");
+        Geraet geraet = new Geraet(seriennummer, "01", "vergeben");
+        Geraet geraet2 = new Geraet(seriennummer+"2", "01", "vergeben");
+        Geraet geraet3 = new Geraet(seriennummer+"1", "01", "lager");
         
         geraet_reposetory.save(geraet);
         geraet_reposetory.save(geraet2);
+        geraet_reposetory.save(geraet3);
         
         Date rueckgabeDatum = new Date();
         Date ausgabeDatum = new Date();

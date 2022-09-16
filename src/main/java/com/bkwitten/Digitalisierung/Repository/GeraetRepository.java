@@ -29,4 +29,7 @@ public interface GeraetRepository extends JpaRepository<Geraet, String>{
     
     @Query("SELECT g FROM Geraet g WHERE g.status = ?1")
     public List<Geraet> findeMitSeriennummerUndStatus(String status);
+    
+    @Query("SELECT g FROM Geraet g WHERE g.seriennummer Like %?1%")
+    public List<Geraet> findeSeriennummerLike(String serinnummer);
 }

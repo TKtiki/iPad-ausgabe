@@ -106,7 +106,11 @@ public class Schueler {
     public void setNachname(String nachname) {
         this.nachname = nachname;
     }
-    
+
+    public int getId() {
+        return id;
+    }
+     
     
     
     

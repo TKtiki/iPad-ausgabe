@@ -12,7 +12,7 @@ export class HomeComponent implements OnInit {
   studentToUpdate = {
     id: "",
     vorname: "",
-    name: "",
+    nachname: "",
     klasse: "",
   };
 
@@ -46,7 +46,7 @@ export class HomeComponent implements OnInit {
   }
 
   deleteStudent(student: any) {
-    this.schülerservice.deleteStudent(student.rollNumber).subscribe(
+    this.schülerservice.deleteStudent(student.id).subscribe(
       (resp) => {
         console.log(resp);
         this.getStudentsDetails();

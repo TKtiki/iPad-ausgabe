@@ -28,11 +28,11 @@
           <tr *ngFor="let student of studentDetails">
             <td>{{student.id}}</td>
             <td>{{student.vorname}}</td>
-            <td>{{student.name}}</td>
+            <td>{{student.nachname}}</td>
             <td>{{student.klasse}}</td>
             <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"
-                        (click)="edit(student)">Edit</button></td>
-            <td><button type="button" class="btn btn-danger" (click)="deleteStudent(student)">Delete</button></td>
+                        (click)="edit(student)">Bearbeiten</button></td>
+            <td><button type="button" class="btn btn-danger" (click)="deleteStudent(student)">Löschen</button></td>
           </tr>
           </tbody>
         </table>
@@ -86,7 +86,7 @@
       <div class="modal-body">
         <form #updateForm="ngForm" (ngSubmit)="updateStudent()">
           <div class="form-group">
-            <label for="rollNumber">Student Rollnumber :</label>
+            <label for="rollNumber">Schüler ID:</label>
             <input
               type="text"
               disabled
@@ -99,19 +99,19 @@
             />
           </div>
           <div class="form-group">
-            <label for="name">Student Name :</label>
+            <label for="name">Schüler Vorname:</label>
             <input
               type="text"
               #name
-              [(ngModel)]="studentToUpdate.name"
+              [(ngModel)]="studentToUpdate.nachname"
               name="name"
               id="name"
               class="form-control"
-              placeholder="Student Name"
+              placeholder="Schüler Vorname"
             />
           </div>
           <div class="form-group">
-            <label for="address">Student Address :</label>
+            <label for="address">Schüler Nachname:</label>
             <input
               type="text"
               #address
@@ -119,11 +119,11 @@
               name="address"
               id="address"
               class="form-control"
-              placeholder="Student Address"
+              placeholder="Schüler Nachname"
             />
           </div>
           <div class="form-group">
-            <label for="percentage">Student Percentage :</label>
+            <label for="percentage">Schüler Klasse:</label>
             <input
               type="number"
               #percentage
@@ -131,7 +131,7 @@
               name="percentage"
               id="percentage"
               class="form-control"
-              placeholder="Student Percentage"
+              placeholder="Schüler Klasse"
             />
           </div>
           <div class="form-group">

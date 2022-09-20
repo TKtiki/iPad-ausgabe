@@ -1,11 +1,11 @@
-import { Component, OnInit } from '@angular/core';
-import {NgForm} from '@angular/forms';
-import {DataServiceService} from '../services/data-service.service';
+import { Component, OnInit } from "@angular/core";
+import { NgForm } from "@angular/forms";
+import { DataServiceService } from "../services/data-service.service";
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css'],
+  selector: "app-home",
+  templateUrl: "./home.component.html",
+  styleUrls: ["./home.component.css"],
 })
 export class HomeComponent implements OnInit {
   studentDetails = null as any;

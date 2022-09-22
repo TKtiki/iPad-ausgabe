@@ -1,8 +1,8 @@
 <mat-card class="device-card-user">
   <mat-card-title>Aktueller Geräte Status</mat-card-title>
   <mat-card-content>
-    <p>Die Anzahl der Verfügbaren Geräte beträgt: 533</p>
-    <p>Die Anzahl der Verliehenen Geräte beträgt: 241</p>
+    <p>Die Anzahl der verfügbaren Geräte beträgt: 533</p>
+    <p>Die Anzahl der verliehenen Geräte beträgt: 241</p>
   </mat-card-content>
 </mat-card>
 
@@ -30,9 +30,9 @@
           <td>{{student.vorname}}</td>
           <td>{{student.nachname}}</td>
           <td>{{student.klasse.bezeichnug}}</td>
-          <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"
+          <td><button type="button" class="btn mat-stroked-button mat-primary" data-toggle="modal" data-target="#exampleModal"
                       (click)="edit(student)">Bearbeiten</button></td>
-          <td><button type="button" class="btn btn-danger" (click)="deleteStudent(student)">Löschen</button></td>
+          <td><button type="button" class="btn mat-stroked-button mat-background-warn" (click)="deleteStudent(student)">Löschen</button></td>
         </tr>
         </tbody>
       </table>
@@ -92,7 +92,7 @@
                    class="form-control" placeholder="Klasse">
           </div>
           <div class="form-group">
-            <input type="submit" value="Update" class="btn btn-primary w-100">
+            <input type="submit" value="Update" class="btn mat-stroked-button mat-primary w-100">
           </div>
         </form>
       </div>

@@ -41,36 +41,8 @@ public class DigitalisierungApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        // create();
-        User lehrer = new User("lehrerID", "VornameLehrer", "NachnameLehrer", "lehrer");
-
-        List<Klasse> test = klasse_reposetory.findeAlleKlasseVonLehrer(lehrer);
-
-        System.out.println("test: " + test.get(0).getBezeichnug());
-
-        User klassenlehrerID = lehrer;
-        Klasse klasse1 = new Klasse(klassenlehrerID, "IT");
-
-        Klasse klasse = test.get(0);
-
-        List<Schueler> test2 = schueler_reposetory.findeAlleSchuelerVonKlasse(klasse);
-        System.out.println("test2: " + test2.get(0).getVorname());
-        test2.get(0).setVorname("vorname");
-        schueler_reposetory.save(test2.get(0));
-        test2 = schueler_reposetory.findeAlleSchuelerVonKlasse(klasse);
-        System.out.println("test2.2: " + test2.get(0).getVorname());
-
-        String seriennummer = "00100212";
-
-        Schueler test3 = schueler_reposetory.findeSchuelerMitGeraet(geraet_reposetory.findById(seriennummer).get());
-        System.out.println("test3: " + test3.getKlasse().getBezeichnug());
-
-        List<Historie> test4 = historie_reposetory.findeMitGeraet(geraet_reposetory.findById(seriennummer).get());
-        System.out.println("test4: " + test4.get(0).getZustand());
-
-        // Anzahl von geräte welche im lager sind
-        List<Geraet> test5 = geraet_reposetory.findeMitSeriennummerUndStatus("lager");
-        System.out.println(test5.size());
+        //create();
+        //test();
 
     }
 
@@ -122,5 +94,36 @@ public class DigitalisierungApplication implements CommandLineRunner {
                 "alles gut");
 
         historie_reposetory.save(historie);
+    }
+    public void test(){
+        User lehrer = new User("lehrerID", "VornameLehrer", "NachnameLehrer", "lehrer");
+
+        List<Klasse> test = klasse_reposetory.findeAlleKlasseVonLehrer(lehrer);
+
+        System.out.println("test: " + test.get(0).getBezeichnug());
+
+        User klassenlehrerID = lehrer;
+        Klasse klasse1 = new Klasse(klassenlehrerID, "IT");
+
+        Klasse klasse = test.get(0);
+
+        List<Schueler> test2 = schueler_reposetory.findeAlleSchuelerVonKlasse(klasse);
+        System.out.println("test2: " + test2.get(0).getVorname());
+        test2.get(0).setVorname("vorname");
+        schueler_reposetory.save(test2.get(0));
+        test2 = schueler_reposetory.findeAlleSchuelerVonKlasse(klasse);
+        System.out.println("test2.2: " + test2.get(0).getVorname());
+
+        String seriennummer = "00100212";
+
+        Schueler test3 = schueler_reposetory.findeSchuelerMitGeraet(geraet_reposetory.findById(seriennummer).get());
+        System.out.println("test3: " + test3.getKlasse().getBezeichnug());
+
+        List<Historie> test4 = historie_reposetory.findeMitGeraet(geraet_reposetory.findById(seriennummer).get());
+        System.out.println("test4: " + test4.get(0).getZustand());
+
+        // Anzahl von geräte welche im lager sind
+        List<Geraet> test5 = geraet_reposetory.findeMitSeriennummerUndStatus("lager");
+        System.out.println(test5.size());
     }
 }
